@@ -115,3 +115,9 @@
             $database->rollback();
         }
         $res = $database->table('assess',$conn)->matching($match)->get(array('title','id'));
+
+## 单元测试
+### 生成测试代码
+    bash gen_entity_test.sh [product|user|order] entity_name
+### 运行单元测试
+    php Test.php
