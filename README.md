@@ -66,19 +66,22 @@
         $match->limit(10);
         $match->offset(10);
         $match->orderBy(array('id' => Match::ASC));
- ### 更新
+        
+### 更新
+ 
         sql: update t_assess set title='测试测试' where ...
         $res = $database->table('assess')->matching($match)->set(
                    array('title'=>'测试测试')
         );
 
- ### 增加
+### 增加
+ 
         sql: insert into t_assess values('测试测试',....);
         $res = $database->table('assess')->set(
                    array('title'=>'测试测试')
         );
 
- ### 批量添加
+### 批量添加
  
         sql: insert into t_assess values('测试测试',....),('测试测试',....)
         $res = $database->table('assess')->mset(
@@ -86,10 +89,12 @@
                        array('title'=>'测试测试'))
         );
 
- ### 删除
+### 删除
+ 
         sql: delete from  t_assesswhere ...
         $res = $database->table('assess')->matching($match)->delete();
- ### 事务的例子
+### 事务的例子
+ 
         $conn = array(
             'driver'   => 'pdo_mysql',
             'user'     => 'root',
